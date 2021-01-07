@@ -26,11 +26,15 @@ div.padded {
 }
 
 #correct-message {
-  background-color:rgb(5, 134, 74);
+  color: rgb(5, 134, 74);
+  text-align: center;
+  font-size: 2em;
 }
 
 #incorrect-message {
-  background-color: red;
+ color: #ff0909;
+ text-align: center;
+ font-size: 2em;
 }
 
 .start {
@@ -61,13 +65,23 @@ button {
   cursor: pointer;
 }
 
-
-
   .button:hover {
     box-shadow: 0 0.4rem 1.4rem 0 rgb(98, 102, 98);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
   }
+
+.high-score {
+  text-align: center;
+  margin: 5px;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 8px;
+  background-color: rgb(255, 218, 9);
+  border: 2px solid rgb(233, 199, 7);
+  cursor: pointer;
+}
 
   /* taken from youtube vid https://www.youtube.com/watch?v=f4fB9Xg2JEY */
   .button[disabled]:hover {
