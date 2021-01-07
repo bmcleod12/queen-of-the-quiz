@@ -2,12 +2,14 @@ var finalScore = document.querySelector("#final-score");
 var initialsInput = document.querySelector("#initials-text");
 var initialsForm = document.querySelector("#initials-form");
 var initialsList = document.querySelector("#initials-list");
+var clearScores = document.querySelector("#clear-scores"); 
 
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 var latestScore = localStorage.getItem("lastScore");
 finalScore.innerText = latestScore;
 
+document.getElementById("clear-scores").hidden = true;
 
 function recordHighScore() {
     
@@ -54,7 +56,8 @@ function recordHighScore() {
 
     initialsInput.value = "";
     document.getElementById("initials-text").hidden = true;
-    console.log(highScores);
+    document.getElementById("log-score").hidden = true;
+    document.getElementById("clear-scores").hidden = false;
 
     initialsList.innerHTML = highScores.map(score => {
       return `<li class="high-score">${score.initials}-${score.score}</li>`;
@@ -66,7 +69,11 @@ function recordHighScore() {
   });
 
 
-  
+  clearScores.addEventListener("click", function clearHighScores() {
+    console.log("clicked");
+    window.localStorage.clear();
+    
+  });
   
   // // When a element inside of the initialsList is clicked...
   // initialsList.addEventListener("click", function(event) {
@@ -83,4 +90,3 @@ function recordHighScore() {
   //     renderhighScores();
   //   }
   // });
-  

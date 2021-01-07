@@ -25,6 +25,14 @@ div.padded {
     padding-left: 20px;
 }
 
+#correct-message {
+  background-color:rgb(5, 134, 74);
+}
+
+#incorrect-message {
+  background-color: red;
+}
+
 .start {
   text-align: center;
   margin: 5px;

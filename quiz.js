@@ -162,10 +162,18 @@ answers.forEach(answer => {
         
             if (grade == "correct") {
                 incrementScore(correctPoints);
+                document.getElementById("correct-message").innerHTML = "That was right!";
+                setTimeout(function (){
+                    document.getElementById("correct-message").innerHTML = "";
+                }, 1500);
             }
 
             if (grade != "correct") {
                 secondsLeft -= 10;
+                document.getElementById("incorrect-message").innerHTML = "Not quite";
+                setTimeout(function (){
+                    document.getElementById("incorrect-message").innerHTML = "";
+                }, 1500);
             }
 
         getNextQuestion();
