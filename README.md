@@ -6,7 +6,7 @@ https://bmcleod12.github.io/queen-of-the-quiz/
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Tests and Known Issues]("#tests-and-known-issues")
+* [Tests and Known Issues](#tests-and-known-issues)
 * [Future Enhancements](#future-enhancements)
 * [Credits](#credits)
 * [License](#license)
