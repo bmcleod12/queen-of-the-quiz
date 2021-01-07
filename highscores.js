@@ -72,7 +72,7 @@ function recordHighScore() {
   clearScores.addEventListener("click", function clearHighScores() {
     console.log("clicked");
     window.localStorage.clear();
-    
+    document.getElementById("initials-list").hidden = true;
   });
   
   // // When a element inside of the initialsList is clicked...
