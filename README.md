@@ -12,14 +12,14 @@ This Harry Potter Quiz...
 
 ## Future Enhancements
 
-    <img alt="Welcome page" src="images/welcomepage.PNG"/>
-    <img alt="Welcome page" src="images/quiz.PNG"/>
-    <img alt="Welcome page" src="images/highscores.PNG"/>
-    <img alt="Welcome page" src="images/noscore.PNG"/>
-    <img alt="Welcome page" src="images/fullnameinhighscore.PNG"/>
-    <img alt="Welcome page" src="images/score1.PNG"/>
-    <img alt="Welcome page" src="images/score2.PNG"/>
-    <img alt="Welcome page" src="images/fullnameinhighscore.PNG"/>
+<img alt="Welcome page" src="images/welcomepage.PNG"/>
+<img alt="Welcome page" src="images/quiz.PNG"/>
+<img alt="Welcome page" src="images/highscores.PNG"/>
+<img alt="Welcome page" src="images/noscore.PNG"/>
+<img alt="Welcome page" src="images/fullnameinhighscore.PNG"/>
+<img alt="Welcome page" src="images/score1.PNG"/>
+<img alt="Welcome page" src="images/score2.PNG"/>
+<img alt="Welcome page" src="images/fullnameinhighscore.PNG"/>
 
 ## License
 
