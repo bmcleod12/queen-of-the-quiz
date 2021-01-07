@@ -1,8 +1,11 @@
 var question = document.getElementById("question");
-var answers = Array.from(document.getElementsByClassName("answer-text"));
-var countdown = document.querySelector(".time");
 var score = document.getElementById("score");
+var countdown = document.querySelector(".time");
 
+// creates an array from the answer-text HTML elements to be pulled into clickable answer choices later
+var answers = Array.from(document.getElementsByClassName("answer-text"));
+
+// declares an array variable to be used to hold the questions that have not yet been answered
 var questionList = [];
 
 var quizSet = [
@@ -98,32 +101,18 @@ var quizSet = [
 
 ];
 
+// declares an object to hold the question currently displayed on screen and its answers
 var currentQuestion = {};
-var questionCounter = 0;
 
+var questionCounter = 0;
 var correctPoints = 20;
-var maxQuestions = 5
 var totalScore = 0;
 var secondsLeft = 101;
 
-// resets the question counter and score to 0; pulls the list of questions into a new array, calls the getNextQuestion function
-function startQuiz() {
-    questionCounter = 0;
-    totalScore = 0;
-    questionList = [...quizSet];
-    
-    var timerInterval = setInterval(function() {
-    secondsLeft--;
-    countdown.textContent = "Time Remaining: " + secondsLeft;
-    
-    if(secondsLeft === 0) {
-        clearInterval(timerInterval);
-        return window.location.assign("highscores.html");
-    }
-    
-    }, 1000);
-    
-    getNextQuestion();
+// adds up the points if users answers correctly
+function incrementScore(points) {
+    totalScore += points;
+    score.innerText = totalScore;
 };
 
 // looks for a random number up to the number of available questions
@@ -148,18 +137,19 @@ function getNextQuestion() {
     questionList.splice(questionIndex, 1);
 };
 
+// allows the answer choices to be clickable
 answers.forEach(answer => {
     answer.addEventListener("click", selectedAnswer => {
-        console.log(selectedAnswer.target);
         var selectedAnswer = selectedAnswer.target;
         var answerNumber = selectedAnswer.dataset["number"];
 
-        // sets the grade to incorrect by default unless the correct answer is selected...might not need
+        // sets the grade to incorrect by default unless the correct answer is selected
         var grade = "incorrect";
             if (answerNumber == currentQuestion.correct) {
                 grade = "correct";
             }
-        
+            
+            // if the correct answer is selected, displays the correct message for 1.5 seconds
             if (grade == "correct") {
                 incrementScore(correctPoints);
                 document.getElementById("correct-message").innerHTML = "That was right!";
@@ -168,6 +158,7 @@ answers.forEach(answer => {
                 }, 1500);
             }
 
+            // if the incorrect answer is selected, decrements the time remaining by 10 seconds and displays the incorrect message for 1.5 seconds
             if (grade != "correct") {
                 secondsLeft -= 10;
                 document.getElementById("incorrect-message").innerHTML = "Not quite";
@@ -180,14 +171,25 @@ answers.forEach(answer => {
     });
 });
 
-function incrementScore(points) {
-    totalScore += points;
-    score.innerText = totalScore;
+// resets the question counter and score to 0; pulls the list of questions into a new array, establishes the timer countdown, calls the getNextQuestion function
+function startQuiz() {
+    questionCounter = 0;
+    totalScore = 0;
+    questionList = [...quizSet];
+    
+    // displays the countdown timer and decrements each second
+    var timerInterval = setInterval(function() {
+    secondsLeft--;
+    countdown.textContent = "Time Remaining: " + secondsLeft;
+    
+    if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+        return window.location.assign("highscores.html");
+    }
+    
+    }, 1000);
+    
+    getNextQuestion();
 };
 
 startQuiz();
-
-
-// https://www.youtube.com/watch?v=zZdQGs62cR8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=4
-
-// https://www.usefultrivia.com/literary_trivia/harry_potter_trivia_index.html
