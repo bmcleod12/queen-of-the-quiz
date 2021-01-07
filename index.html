@@ -7,27 +7,30 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Welcome</title>
 </head>
+
 <body>
-    
-    <div class="padded">
-        <a id="viewScores" class="button high-score-button" href="highscores.html">
-        View Highscores
-        </a>
-    </div>
+    <header>
+        <div class="padded">
+            <a id="viewScores" class="button high-score-button" href="highscores.html">
+            View Highscores
+            </a>
+        </div>
+    </header>
 
-    <!-- Centers the welcome text -->
-    <div class="center padded" id="welcome-banner">
-        <h1 class="padded">Welcome to the quiz!</h1>
-        <h3 class="padded">This is a timed quiz asking a maximum of 10 questions related to Harry Potter. Incorrect answers will deduct 10 seconds from your time. Once you begin the quiz, you cannot return to this page until you have completed all questions or your time runs out. Wands at the ready!</h3>
-        <h2>Click Start to begin.</h2>
-    </div>
-    
-    <!-- Button to kick off the quiz; calls js onclick to start the timer -->
-    <div class="center">
-        <a id="startQuiz" class="button start" href="quiz.html">
-        Start!
-        </a>
-    </div>
-
+    <main>
+        <!-- Centers the welcome text -->
+        <div class="center padded" id="welcome-banner">
+            <h1 class="padded">Welcome to the quiz!</h1>
+            <h3 class="padded">This is a timed quiz asking a maximum of 10 questions related to Harry Potter. Incorrect answers will deduct 10 seconds from your time. Once you begin the quiz, you cannot return to this page until you have completed all questions or your time runs out. Wands at the ready!</h3>
+            <h2>Click Start to begin.</h2>
+        </div>
+        
+        <!-- Button to kick off the quiz; calls js onclick to start the timer -->
+        <div class="center">
+            <a id="startQuiz" class="button start" href="quiz.html">
+            Start!
+            </a>
+        </div>
+        </main>
 </body>
 </html>

@@ -6,43 +6,49 @@
     <link rel="stylesheet" href="./style.css" />    
     <title>High Scores</title>
 </head>
+
 <body>
-        <!-- Button to kick off the quiz; calls js onclick to start the timer -->
+    <header>
+        <!-- Buttons to return to home or retake the quiz -->
         <div class="center">
             <a id="startQuiz" class="button start" href="index.html">
                 Back to Home
             </a>
             <a id="startQuiz" class="button start" href="quiz.html">
-            Retake the Quiz
+                Retake the Quiz
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- final score information -->
+        <div class="center" id="final-score-text">
+            <h1 id="final">Your Score: </h1>
+            <h1 id="final-score"></h1>
+        </div>
+
+        <div class="center">
+            <h1 id="log-score">Log your score!</h1>
+        </div>
+
+        <div class="center">
+            <h1 id="no-current-score">Play to get a new score!</h1>
+        </div>
+
+        <div class="center">
+            <a id="clear-scores" class="button">
+                Clear High Scores
             </a>
         </div>
 
-    <div class="center" id="final-score-text">
-        <h1 id="final">Your Score: </h1>
-        <h1 id="final-score"></h1>
-    </div>
-
-    <div class="center">
-        <h1 id="log-score">Log your score!</h1>
-    </div>
-
-    <div class="center">
-        <h1 id="no-current-score">Play to get a new score!</h1>
-    </div>
-
-    <div class="center">
-        <a id="clear-scores" class="button">
-            Clear High Scores
-        </a>
-    </div>
-
-    <!-- form to input initials -->
-    <div class="padded">
-        <form id="initials-form" method="POST">
-            <input type="text" placeholder="Enter your initials" name="initials-text" id="initials-text" />
-        </form>
-        <ul id="initials-list"></ul>
+        <!-- form to input initials -->
+        <div class="padded">
+            <form id="initials-form" method="POST">
+                <input type="text" placeholder="Enter your initials" name="initials-text" id="initials-text" />
+            </form>
+            <ul id="initials-list"></ul>
         </div>
+    </main>
         
 <script src="./highscores.js"></script>
 </body>
