@@ -1,3 +1,5 @@
+/* || Generic styles for every page */
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(247, 238, 238);
@@ -16,40 +18,11 @@ div.padded {
   margin-top: 40px;
 }
 
-#timer {
-    text-align: right;
-    width: 100%;
+.flexbox {
+  display: flex;
+  justify-content: space-between;
 }
 
-#scoreLink {
-    text-align: left;
-    padding-left: 20px;
-}
-
-#correct-message {
-  color: rgb(5, 134, 74);
-  text-align: center;
-  font-size: 2em;
-}
-
-#incorrect-message {
- color: #ff0909;
- text-align: center;
- font-size: 2em;
-}
-
-.start {
-  text-align: center;
-  margin: 5px;
-  text-decoration: none;
-  padding: 10px;
-  font-size: 1.5em;
-  border-radius: 8px;
-  background-color: rgb(5, 134, 74);
-  border: 2px solid rgb(7, 94, 53);
-  color: #fdfdfd;
-  cursor: pointer;
-}
 
 button {
   text-align: left;
@@ -66,13 +39,29 @@ button {
   cursor: pointer;
 }
 
-  .button:hover {
-    box-shadow: 0 0.4rem 1.4rem 0 rgb(98, 102, 98);
-    transform: translateY(-0.1rem);
-    transition: transform 150ms;
-  }
+.button:hover {
+  box-shadow: 0 0.4rem 1.4rem 0 rgb(98, 102, 98);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
 
-.high-score-button {
+.green {
+  text-align: center;
+  margin: 5px;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.5em;
+  border-radius: 8px;
+  background-color: rgb(5, 134, 74);
+  border: 2px solid rgb(7, 94, 53);
+  color: #fdfdfd;
+  cursor: pointer;
+}
+
+
+/* || Styles for the welcome page */
+
+#view-scores {
   text-align: center;
   margin: 5px;
   text-decoration: none;
@@ -85,21 +74,12 @@ button {
   cursor: pointer;
 }
 
-/* copied from to do activity */
 
-.flexbox {
-  display: flex;
-  justify-content: space-between;
-}
+/* || Styles for the quiz page */
 
-#final-score-text {
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-}
-
-#final-score {
-  padding-left: 8px;
+#timer {
+    text-align: right;
+    width: 100%;
 }
 
 #score {
@@ -136,6 +116,42 @@ button {
   margin: 0px;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  color: rgb(58, 55, 55);
+  font-size: 1.2em;
+}
+
+li {
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 0px;
+  background-color: rgb(255, 218, 9);
+  text-align: center;
+  border-radius: 6px;
+  color: rgb(58, 55, 55);
+  font-size: 1.8em;
+  line-height: 1.5;
+}
+
+#correct-message {
+  color: rgb(5, 134, 74);
+  text-align: center;
+  font-size: 2em;
+}
+
+#incorrect-message {
+ color: #ff0909;
+ text-align: center;
+ font-size: 2em;
+}
+
+
+
+/* || Styles for the high scores page */
+
 input {
     height: 40px;
     width: 100%;
@@ -145,6 +161,16 @@ input {
     font-size: 2.4em;
     border: 2px solid rgb(14, 102, 114);
   }
+
+#final-score-text {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+#final-score {
+  padding-left: 8px;
+}
 
 #scoreboard {
   width: 800px;
@@ -164,23 +190,3 @@ input {
   color:  #fdfdfd;
   cursor: pointer;
 }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-    color: rgb(58, 55, 55);
-    font-size: 1.2em;
-  }
-  
-  li {
-    height: 50px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 0px;
-    background-color: rgb(255, 218, 9);
-    text-align: center;
-    border-radius: 6px;
-    color: rgb(58, 55, 55);
-    font-size: 1.8em;
-    line-height: 1.5;
-  }
