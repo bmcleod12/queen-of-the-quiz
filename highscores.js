@@ -11,6 +11,20 @@ finalScore.innerText = latestScore;
 
 document.getElementById("clear-scores").hidden = true;
 
+if (latestScore == null) {
+  document.getElementById("log-score").hidden = true;
+  document.getElementById("initials-form").hidden = true;
+}
+
+
+function renderHighScores() {
+  initialsList.innerHTML = highScores.map(score => {
+    return `<li class="high-score">${score.initials}-${score.score}</li>`;
+  }).join("");
+};
+
+
+
 function recordHighScore() {
     
   // Get stored highScores from localStorage
@@ -21,15 +35,13 @@ function recordHighScore() {
   if (storedhighScores !== null) {
       highScores = storedhighScores;
   }
-
-  // Render highScores to the DOM
-  // renderhighScores();
 }
 
   function storehighScores() {
     // Stringify and set "highScores" key in localStorage to highScores array
     localStorage.setItem("highScores", JSON.stringify(highScores));
   }
+  
   
   // When form is submitted...
   initialsForm.addEventListener("submit", function(event) {
@@ -59,13 +71,10 @@ function recordHighScore() {
     document.getElementById("log-score").hidden = true;
     document.getElementById("clear-scores").hidden = false;
 
-    initialsList.innerHTML = highScores.map(score => {
-      return `<li class="high-score">${score.initials}-${score.score}</li>`;
-    }).join("");
+    renderHighScores();
 
-    // Store updated highScores in localStorage, re-render the list
+    // Store updated highScores in localStorage
     storehighScores();
-    // renderhighScores();
   });
 
 
@@ -75,18 +84,4 @@ function recordHighScore() {
     document.getElementById("initials-list").hidden = true;
   });
   
-  // // When a element inside of the initialsList is clicked...
-  // initialsList.addEventListener("click", function(event) {
-  //   var element = event.target;
-  
-  //   // If that element is a button...
-  //   if (element.matches("button") === true) {
-  //     // Get its data-index value and remove the todo element from the list
-  //     var index = element.parentElement.getAttribute("data-index");
-  //     highScores.splice(index, 1);
-  
-  //     // Store updated highScores in localStorage, re-render the list
-  //     storehighScores();
-  //     renderhighScores();
-  //   }
-  // });
+  renderHighScores();
